@@ -11,6 +11,7 @@ import FavoriteProducts from "./components/favorite";
 import Header from "./components/header";
 import SearchResults from "./components/header/searchResults";
 import AllProducts from "./components/allProducts";
+import Footer from "./components/Footer"
 
 function App() {
   const [user, setUser] = useState();
@@ -230,6 +231,8 @@ function App() {
 
   return (
     <>
+      <div className="pb-5">
+
       <Header
         user={user}
         navigateToCart={navigateToCart}
@@ -244,7 +247,8 @@ function App() {
         resultArr={resultArr}
         setSearching={setSearching}
         searchProduct={searchProduct}
-      />
+        />
+        </div>
       <div className="pt-[76px]">
         <Routes>
           <Route
@@ -313,7 +317,7 @@ function App() {
           />
 
           <Route
-            path="all-products"
+            path="/all-products"
             element={
               <AllProducts
                 products={products}
@@ -325,6 +329,7 @@ function App() {
           />
         </Routes>
       </div>
+      <Footer/>
     </>
   );
 }

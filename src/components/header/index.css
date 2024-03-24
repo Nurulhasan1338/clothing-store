@@ -1,0 +1,29 @@
+
+.header{
+    background-color: black;
+    color: rgb(235, 244, 247);
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.logo-name{
+    font-family: fangsong;
+    font-size: 20px;
+}
+.imgLogo{
+    position: relative;
+    max-width: 73px;
+    aspect-ratio: 1/1;
+}
+.nav-link :hover{
+    border-bottom: 1px white solid;
+}
+
+.hideformobile{
+    font-size: 18px;
+}
+@media only screen and (max-width: 767px) {
+    /* Your CSS rules for mobile screens */
+   .hideformobile{
+    display: none !important;
+   }
+}

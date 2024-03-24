@@ -2,6 +2,7 @@
 import { useNavigate } from "react-router";
 import { HeartFilledIcon, HeartOutlinedIcon } from "../DynamicIcons";
 import { useEffect, useState } from "react";
+import "./index.css"
 
 export function SingleProduct({ name, img, price, id, onClickFav, isItemFav }) {
   const [isItemPresent, setIsItemPresent] = useState();
@@ -20,8 +21,8 @@ export function SingleProduct({ name, img, price, id, onClickFav, isItemFav }) {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
     >
-      <div className="bg-violet-200 rounded-t-md relative p-3 h-52">
-        <img src={img} alt="" className="w-40 mx-auto h-full object-cover" />
+      <div className=" rounded-t-md relative p-3 h-52">
+        <img src={img} alt="" className="productImage"/>
         <button
           className="text-[#712689] absolute top-3 right-3"
           onClick={(e) => {
@@ -32,7 +33,7 @@ export function SingleProduct({ name, img, price, id, onClickFav, isItemFav }) {
           {isItemPresent ? <HeartFilledIcon /> : <HeartOutlinedIcon />}
         </button>
       </div>
-      <div className="bg-white px-3 py-2 flex justify-between rounded-b-md">
+      <div className="bg-white px-3 py-2 rounded-b-md">
         <p className="font-semibold md:text-lg text-base twoLinesOnly me-2">
           {name}
         </p>

@@ -5,6 +5,8 @@ import { GoogleLogin } from "@react-oauth/google";
 import { Link } from "react-router-dom";
 import Logo from "/Logo.png";
 import { createPortal } from "react-dom";
+import SideMenu from "./sizeMenu"
+import "./index.css";
 
 export default function Header({
   navigateToCart,
@@ -24,14 +26,31 @@ export default function Header({
   const navigate = useNavigate();
   return (
     <>
-      <div className="w-full px-4 py-2 bg-violet-100 text-white flex items-center gap-3 fixed z-10">
-        <div>
+      <div className="d-flex flex-row justify-content-between fixed z-10 header">
+        <div className="d-flex flex-row">
+
+        <div className="flex">
           <Link to={"/"}>
-            <img src={Logo} alt="" className="w-20" />
+            <img src={Logo} className="imgLogo" alt="Bazigar logo"  />
           </Link>
+          <div className="items-center pt-2 logo-name">
+          <p>BAZIGAR</p> 
+          <p>COLLECTION</p>
+          </div>
         </div>
 
-        <div className="w-full relative">
+        <div className="d-flex flex-row align-items-around hideformobile items-center ms-5" >
+        <div  className="mx-3 nav-link "><Link to="/">Party Wear</Link></div>
+        <div  className="mx-3 nav-link"><Link to="/">Casuals</Link></div>
+        <div  className="mx-3 nav-link"><Link to="/">Footwear </Link></div>
+        <div  className="mx-3 nav-link me-5"><Link to="/">About us</Link></div>
+        </div>
+
+        </div>
+
+        <div className="d-flex flex-row align-items-center">
+        
+        <div className="w-50 me-5 hideformobile">
           <form
             action="#"
             onSubmit={(e) => {
@@ -80,11 +99,17 @@ export default function Header({
             </>
           ) : (
             ""
-          )}
-        </div>
+            )}
+        
+        
+      
 
+        </div>
+        
+       
+        <div className="d-flex flex-row justify-content-end">      
         <button
-          className="text-[#712689] px-2 relative"
+          className="px-2 relative"
           onClick={navigateToCart}
         >
           <CartIcon />
@@ -93,20 +118,19 @@ export default function Header({
               {cartItemsNumber}
             </span>
           )}
-          {/* <span className="w-4 h-4 bg-red-800 text-white text-xs leading-4 text-center rounded-full absolute -top-1 right-0">
-            3
-          </span> */}
+         
+      
         </button>
 
         <button
-          className="text-[#712689] px-2"
+          className="px-2"
           onClick={() => navigate("/favorite-products")}
         >
           <HeartFilledIcon />
         </button>
 
         <button
-          className="text-[#712689] px-2 relative"
+          className="px-2 relative"
           onClick={toggleDropdown}
         >
           {user && user.picture ? (
@@ -146,6 +170,16 @@ export default function Header({
             ""
           )}
         </button>
+        </div>
+
+        <div className="d-md-none" >
+        <SideMenu/>
+        </div>
+
+      
+
+        </div>
+
       </div>
     </>
   );

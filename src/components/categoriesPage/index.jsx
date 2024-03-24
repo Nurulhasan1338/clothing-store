@@ -29,6 +29,7 @@ export default function Categories({ onClickFav, isItemFav }) {
 
   return (
     <div className="p-5">
+      <div className="display-3 text-center mb-5">{category}</div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-12">
         {loading ? (
           <TrendingProductsPlaceholder />
