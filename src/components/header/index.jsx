@@ -40,8 +40,8 @@ export default function Header({
         </div>
 
         <div className="d-flex flex-row align-items-around hideformobile items-center ms-5" >
-        <div  className="mx-3 nav-link "><Link to="/">Party Wear</Link></div>
-        <div  className="mx-3 nav-link"><Link to="/">Casuals</Link></div>
+        <div  className="mx-3 nav-link "><Link to="/">Top wear</Link></div>
+        <div  className="mx-3 nav-link"><Link to="/">Bttom wear</Link></div>
         <div  className="mx-3 nav-link"><Link to="/">Footwear </Link></div>
         <div  className="mx-3 nav-link me-5"><Link to="/">About us</Link></div>
         </div>

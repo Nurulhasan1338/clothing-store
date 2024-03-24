@@ -12,46 +12,45 @@ const Footer = () => {
           {/* First Column */}
           <div className="col-md-3 col-sm-4">
      
-            <ul className="list-unstyled">
-              <li><Link to="/">Interior</Link></li>
-              <li><Link to="/">  Construction</Link></li>
-              <li><Link to="/">  Properties</Link></li>
-              <li><Link to="/">Interior</Link></li>
-              <li><Link to="/">  Construction</Link></li>
-              <li><Link to="/">  Properties</Link></li>
+            <ul className="text-primary underline">
+              <li><Link to="/TopWear">Top wear</Link></li>
+              <li><Link to="/BottomWear">Bottom wear</Link></li>
+              <li><Link to="/Kurtas">Kurtas</Link></li>
+              <li><Link to="/Latest_designs">Latest designs</Link></li>
+              <li><Link to="/Sports_wear">Sports wear</Link></li>
+              <li><Link to="/Footwear">Footwear</Link></li>
             </ul>
           </div>
 
           {/* Second Column */}
 
 
-          <div className="col-md-3 col-sm-4">
+          <div className="col-md-3 col-sm-4 text-primary underline my-2">
           
             <ul className="list-unstyled">
               <li><Link to="/"> About us</Link></li>
-              <li><Link to="/sell">Sell</Link></li>
-              <li><Link to="/"> About us</Link></li>
-              <li><Link to="/sell">Sell</Link></li>
+              <li><Link to="/sell">Contact us</Link></li>
+              
 
             </ul>
           </div>
 
 
           {/* Fourth Column - Wider */}
-          <div className="col-md-3">
-            <h5>Contact Information</h5>
+          <div className="col-md-3 my-2">
+            <h3 className='fs-3 pb-2'>Location</h3>
             <p>
-              Address: 123 Main St, Cityville<br />
-              Phone: (555) 123-4567<br />
-              Email: info@example.com
+             <strong> Address:</strong> Indra Market, Kota<br />
+             <strong> Phone:</strong> (555) 123-4567<br />
+             <strong> Email:</strong>BazigarCollection@gmail.com
             </p>
           </div>
 
-          <div className="col-md-3 ">
+          <div className="col-md-3 d-flex justify-content-center">
             <ProfileCard></ProfileCard>
           </div>
-          <div className="col-md-12 ">
-            <p className='text-secondary'>Copyright © 2024 CityDealer Kota</p>
+          <div className="col-md-12 text-center ">
+            <p className='text-secondary'>Copyright © 2024 Bazigar Collection Kota</p>
           </div>
         </div>
       </div>

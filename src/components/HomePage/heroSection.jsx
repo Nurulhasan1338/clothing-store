@@ -6,10 +6,10 @@ export default function HeroSection() {
   const navigate = useNavigate();
 
   const swiperImgUrls = [
-    "Images/heroBanner1.png",
     "Images/heroBanner2.png",
     "Images/heroBanner3.png",
     "Images/heroBanner4.png",
+ 
   ];
 
   const [currentImgIndex, setCurrentImgIndex] = useState(0);

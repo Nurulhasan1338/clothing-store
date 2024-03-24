@@ -1,67 +1,71 @@
 import { useEffect, useState } from "react";
 import TopCategoriesPlaceholder from "./Placeholders/topCategoriesPlaceholder";
 import { useNavigate } from "react-router/dist";
-// import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import Festivewear from "../../assets/festive_wear.jpg";
+import Bottom from "../../assets/bottomwearslim.jpg";
+import Cauals from "../../assets/cauals.jpg";
+import Footwear from "../../assets/footwear.jpg";
+import "./index.css"
 export default function TopCategories() {
-  const [favouriteProducts, setFavouriteProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const Catagories = [
+    {
+      catagory:"Festive",
+      img: Festivewear
+    },
+    {
+      catagory:"Bottom",
+      img: Bottom
+    },
+    {
+      catagory:"Cauals",
+      img: Cauals
+    },
+    {
+      catagory:"Footwear",
+      img: Footwear
+    }
+  ];
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch(
-          "https://fakestoreapi.com/products/categories",
-        );
-        const data = await response.json();
-        setFavouriteProducts(data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
+  
 
   return (
     <div className="p-4">
-      <h2 className="md:text-4xl text-2xl text-center font-semibold mb-5">
+      <h2 className="md:text-4xl text-2xl text-center font-semibold mt-4 mb-3">
         Top Categories
       </h2>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-        {loading ? (
-          // Render skeleton loading placeholders while data is being fetched
-          <TopCategoriesPlaceholder />
-        ) : (
-          // Render the actual product list once data is fetched
-          <>
-            {favouriteProducts.map((product, index) => {
+        <>
+            {Catagories.map((item, index) => {
               return (
-                // eslint-disable-next-line react/jsx-key
-                <CategoryCard categoryCardTitle={product} key={index} />
+                <CategoryCard Card={item} key={index} />
               );
             })}
-          </>
-        )}
+        </>
+   
       </div>
     </div>
   );
 }
 
+
 // eslint-disable-next-line react/prop-types
-function CategoryCard({ categoryCardTitle }) {
-  const navigate = useNavigate();
+function CategoryCard({ Card }) {
   return (
-    <li
-      className="border border-gray-300 text-sm md:text-base rounded-lg py-5 px-4 text-center cursor-pointer hover:border-transparent hover:-translate-y-1 hover:shadow-md transition-all list-none"
+    <Link
+      to = {`/${Card.catagory}`}
+      className="border border-gray-300 text-sm md:text-base rounded-lg my-4 hover:border-transparent hover:-translate-y-1 hover:shadow-md transition-all list-none Card"
       onClick={() => {
-        navigate(`/${categoryCardTitle}`);
         window.scroll({ top: 0, behavior: "smooth" });
       }}
+      style={{ backgroundImage: `url(${Card.img})`}}
     >
-      <p>{categoryCardTitle}</p>
-    </li>
+    {/* <img src={Card.img} alt={Card.catagory} className="tileImage"/> */}
+  <div class="overlay">
+    <div class="overlay-text">{Card.catagory}</div>
+  </div>
+    
+    </Link>
   );
 }

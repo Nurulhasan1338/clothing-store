@@ -32,7 +32,7 @@ export default function FeaturedAd() {
         <FeatuedAdPlaceholder />
       ) : (
         <div
-          className="bg-[#712689] text-white p-5 grid grid-cols-2 gap-4 items-center cursor-pointer"
+          className="bg-dark text-white p-5 grid grid-cols-2 gap-4 items-center cursor-pointer"
           onClick={() => {
             navigate(`/ProductDetail/${randonNum}`);
             window.scrollTo({ top: 0, behavior: "smooth" });

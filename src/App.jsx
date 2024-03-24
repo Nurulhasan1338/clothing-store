@@ -231,7 +231,7 @@ function App() {
 
   return (
     <>
-      <div className="pb-5">
+      <div className="pb-3">
 
       <Header
         user={user}
@@ -248,8 +248,8 @@ function App() {
         setSearching={setSearching}
         searchProduct={searchProduct}
         />
-        </div>
-      <div className="pt-[76px]">
+      </div>
+      <div className="mt-5 pt-3">
         <Routes>
           <Route
             path="/"
@@ -328,8 +328,8 @@ function App() {
             }
           />
         </Routes>
-      </div>
       <Footer/>
+      </div>
     </>
   );
 }

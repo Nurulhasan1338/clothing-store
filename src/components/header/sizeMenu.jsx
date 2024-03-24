@@ -2,6 +2,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { SlOptionsVertical } from "react-icons/sl";
 import { Link } from "react-router-dom";
 import { Sling as Hamburger } from 'hamburger-react'
 
@@ -26,7 +27,7 @@ export default function BasicMenu() {
         onClick={handleClick}
         className='text-light'
       >
-   <Hamburger/>
+      <SlOptionsVertical/>
       </Button>
       <Menu
         id="basic-menu"
@@ -38,10 +39,10 @@ export default function BasicMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}><Link to="/">Party Wear</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/">Party Wear</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/">Party Wear</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/">Party Wear</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/TopWear">Top wear</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/Bottomwear">Bttom wear</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/Footwear">Footwear</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/About us">About us</Link></MenuItem>
       
       </Menu>
     </div>
